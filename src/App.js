@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import "./App.css";
 
 function App() {
+  const { register, handleSubmit } = useForm();
+  const [userInfo, setUserInfo] = useState();
+  const onSubmit = (data) => {
+    setUserInfo(data);
+    console.log(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <pre>{JSON.stringify(userInfo, undefined, 2)}</pre>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h1>Registration Form</h1>
+        <div className="ui divider"></div>
+        <div className="ui form">
+          <div className="field">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="username"
+            {...register('name', { required: true })}
+            />
+          </div>
+          <div className="field">
+            <label>email</label>
+            <input type="email" name="email" placeholder="Email"
+            {...register('email', { required: true })} />
+          </div>
+          <div className="field">
+            <label>Phone number</label>
+            <input type="number" name="number" placeholder="phone number" 
+            {...register('number', { required: true })}/>
+          </div>
+          <div className="field">
+            <label>Birthday</label>
+            <input type="date" name="birthday" placeholder="phone DOB" 
+            {...register('date', { required: true })}/>
+          </div>
+          <button className="btn-grad">submit</button>
+        </div>
+      </form>
     </div>
   );
 }

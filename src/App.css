@@ -1,4 +1,8 @@
-.App {
+body{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,112,1) 32%, rgba(0,212,255,1) 100%);}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +39,62 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.container{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.container > form {
+  width: 70%;
+  border: 1px solid #dfdfdf;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+pre{
+  width: 70%;
+  color: #fff;
+  font-size: larger;
+}
+
+/* button{
+  background-color: green !important;
+  color: white; */
+/* } */
+         
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+  margin: 0px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  width: 300px;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+p{
+  color: red;
 }
